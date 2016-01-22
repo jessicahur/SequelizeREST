@@ -1,0 +1,27 @@
+{
+  "name": "sequelize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp testing"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessicahur/SequelizeREST.git"
+  },
+  "author": "Jessica Tran Hur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessicahur/SequelizeREST/issues"
+  },
+  "homepage": "https://github.com/jessicahur/SequelizeREST#readme",
+  "dependencies": {
+    "pg": "^4.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.18.0"
+  },
+  "devDependencies": {
+    "express": "^4.13.4"
+  }
+}
