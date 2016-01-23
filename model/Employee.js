@@ -1,9 +1,11 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('postgres://server:abc@localhost:3000/employees');
+const sequelize = new Sequelize('postgres://admin:abc@localhost:5432/employees');
 
+//http://postgresguide.com/setup/users.html
 //http://docs.sequelizejs.com/en/latest/docs/models-definition/#validations
 //http://docs.sequelizejs.com/en/latest/docs/models-definition/
+
 const Employee = sequelize.define('Employee', {
   _id: {
     type: Sequelize.STRING,
@@ -32,16 +34,15 @@ const Employee = sequelize.define('Employee', {
     unique: true,
     validate: {
       isEmail: true
-    },
+    }
+  },
     position: {
       type: Sequelize.ENUM('manager', 'accountant', 'engineer', 'receptionist'),
       allowNull: false
     }
   },
   {
-  freezeTableName: true // Model tableName will be the same as the model name
-  }
-
+    freezeTableName: true // Model tableName will be the same as the model name
 });
 
 module.exports = Employee;

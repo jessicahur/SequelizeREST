@@ -22,6 +22,16 @@
     "sequelize": "^3.18.0"
   },
   "devDependencies": {
-    "express": "^4.13.4"
+    "body-parser": "^1.14.2",
+    "chai": "^3.4.1",
+    "express": "^4.13.4",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0",
+    "mocha": "^2.3.4",
+    "nodemon": "^1.8.1"
   }
 }
