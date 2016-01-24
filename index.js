@@ -7,6 +7,7 @@ Employee.sync()
             app.listen(3000, () => {
               console.log('Server has started. Listening on port 3000...');
             })
-        .catch( (err) => console.log(err) );
+          })
+        .catch( err => console.log(err) );
 
 

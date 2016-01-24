@@ -80,7 +80,7 @@ describe ('Sequelize', () => {
   });
 
   //GET
-  it('should get an array of json objects back with /GET', (done) => {
+  it('should get an array of json objects back with GET', (done) => {
     chai.request(app)
         .get('/employees')
         .end((err, res) => {
@@ -95,9 +95,7 @@ describe ('Sequelize', () => {
     chai.request(app)
         .get('/employees/testing')
         .end((err, res) => {
-          console.log('RUNNNNNN');
           expect(err).to.be.null;
-          console.log('RES BODYYY',res.body);
           expect(res.body['_id']).to.equal('testing');
           done();
         });
