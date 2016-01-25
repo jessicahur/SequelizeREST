@@ -1,3 +1,4 @@
+'use strict';
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const assert = chai.assert;
@@ -43,7 +44,7 @@ describe ('Sequelize', () => {
   });
 
   //Data Validation
-  it('should receive status 500 trying to post the wrong phone format', (done) => {
+  it('should receive error JSON trying to post the wrong phone format', (done) => {
     var testJson = {
       _id: "testing",
       name: "testing",
@@ -56,12 +57,12 @@ describe ('Sequelize', () => {
         .post('/employees')
         .send(testJson)
         .end((err, res) => {
-          expect(res).to.have.status(500);
+          expect(res.body.errors).to.exist;
           done();
         });
   });
 
-  it('should receive status 500 trying to post the wrong position option', (done) => {
+  it('should receive error JSON trying to post the wrong position option', (done) => {
     var testJson = {
       _id: "testing",
       name: "testing",
@@ -74,7 +75,7 @@ describe ('Sequelize', () => {
         .post('/employees')
         .send(testJson)
         .end((err, res) => {
-          expect(res).to.have.status(500);
+          expect(res.body.errors).to.exist;
           done();
         });
   });
@@ -97,6 +98,19 @@ describe ('Sequelize', () => {
         .end((err, res) => {
           expect(err).to.be.null;
           expect(res.body['_id']).to.equal('testing');
+          done();
+        });
+  });
+
+  //PUT
+  it('should return a json object that has the matching updated field',(done) => {
+    let update = {name: "testing 1"};
+    chai.request(app)
+        .put('/employees/testing')
+        .send(update)
+        .end((err, res) => {
+          expect(err).to.be.null;
+          assert.equal(res.body.name, update.name);
           done();
         });
   });

@@ -17,8 +17,6 @@
   },
   "homepage": "https://github.com/jessicahur/SequelizeREST#readme",
   "dependencies": {
-    "pg": "^4.4.3",
-    "pg-hstore": "^2.3.2",
     "sequelize": "^3.18.0"
   },
   "devDependencies": {
