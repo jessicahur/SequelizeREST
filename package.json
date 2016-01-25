@@ -16,9 +16,6 @@
     "url": "https://github.com/jessicahur/SequelizeREST/issues"
   },
   "homepage": "https://github.com/jessicahur/SequelizeREST#readme",
-  "dependencies": {
-    "sequelize": "^3.18.0"
-  },
   "devDependencies": {
     "body-parser": "^1.14.2",
     "chai": "^3.4.1",
@@ -31,6 +28,9 @@
     "jshint": "^2.9.1",
     "jshint-stylish": "^2.1.0",
     "mocha": "^2.3.4",
-    "nodemon": "^1.8.1"
+    "nodemon": "^1.8.1",
+    "pg": "^4.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.18.0"
   }
 }
