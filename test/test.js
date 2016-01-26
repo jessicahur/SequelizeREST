@@ -44,7 +44,7 @@ describe ('Sequelize', () => {
   });
 
   //Data Validation
-  it('should receive error JSON trying to post the wrong phone format', (done) => {
+  it('should receive error 400 status trying to post the wrong phone format', (done) => {
     var testJson = {
       _id: "testing",
       name: "testing",
@@ -57,12 +57,12 @@ describe ('Sequelize', () => {
         .post('/employees')
         .send(testJson)
         .end((err, res) => {
-          expect(res.body.errors).to.exist;
+          expect(res).to.have.status(400);
           done();
         });
   });
 
-  it('should receive error JSON trying to post the wrong position option', (done) => {
+  it('should receive status 400 trying to post the wrong position option', (done) => {
     var testJson = {
       _id: "testing",
       name: "testing",
@@ -75,7 +75,7 @@ describe ('Sequelize', () => {
         .post('/employees')
         .send(testJson)
         .end((err, res) => {
-          expect(res.body.errors).to.exist;
+          expect(res).to.have.status(400);
           done();
         });
   });
